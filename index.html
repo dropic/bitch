@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Bitch Breaker - dropic edition</title>
+</head>
+
+<body>
+    <h2>Controls</h2>
+    <table id="controls">
+        <tr>
+            <th>Button</th>
+            <th>Player 1</th>
+            <th>Player 2</th>
+        </tr>
+        <tr>
+            <td>Left</td>
+            <td>Left</td>
+            <td>A</td>
+        <tr>
+            <td>Right</td>
+            <td>Right</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>Up</td>
+            <td>Up</td>
+            <td>W</td>
+        </tr>
+        <tr>
+            <td>Down</td>
+            <td>Down</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>Num-1/K</td>
+            <td>G</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>Num-2/L</td>
+            <td>H</td>
+        </tr>
+        <tr>
+            <td>Select</td>
+            <td>Num-4/I</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>Start</td>
+            <td>Num-5/O</td>
+            <td>Y</td>
+        </tr>
+    </table>
+
+    <script src="lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/nes.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/utils.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/cpu.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/keyboard.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/mappers.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/papu.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/ppu.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/rom.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/ui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        var nes;
+        $(function() {
+            nes = new JSNES({
+                'ui': $('#emulator').JSNESUI({
+                    "Homebrew": [
+                        ['BitchBreaker', 'roms/bb/bitchbreaker.nes'],
+                    ]
+                })
+            });
+            nes.ui.loadROM();
+            nes.ui.romSelect.hide();
+            nes.ui.screen.width(512);
+            nes.ui.buttons.zoom.hide();
+            nes.ui.buttons.sound.click();
+        });
+    </script>
+    <!--[if IE]>
+        <script type="text/vbscript" src="source/jsnes-ie-hacks.vbscript"></script>
+    <![endif]-->
+
+</body>
+</html>
